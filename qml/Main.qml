@@ -7,17 +7,43 @@ ApplicationWindow {
     height: 300
     visible: true
 
-    Column {
-        Image {
-            id: img1
-            source: "qrc:/hs-mannheim.jpg"
-        }
-        Row {
-            PaddedRectangle { width: 100; height: 50; radius: 25; color: "blue"}
-            Rectangle { width: 100; height: 50; radius: 25; color: "blue"}
-            Rectangle { width: 100; height: 50; radius: 25; color: "blue"}
-            Rectangle { width: 100; height: 50; radius: 25; color: "blue"}
+    Item {
+        id: window
+        width: Screen.width
+        height: Screen.height
+
+
+
+        Column {
+
+            Image {
+                id: img1
+                fillMode: Image.Stretch
+                source: "hs-mannheim.jpg"
+                anchors.left: mainWindow.left
+                anchors.top: mainWindow.top
+                anchors.right: mainWindow.right
+                anchors.margins: 10
+
+            }
+
+            Row {
+                padding: mainWindow.width / 10
+                spacing: 10
+                MyButton {
+                    id: button1
+                    name: "Button 1"
+
+                }
+                MyButton {
+                    id: button2
+                    name: "Button 2"
+                }
+                MyButton {
+                    id: button3
+                    name: "Button 3"
+                }
+            }
         }
     }
-
 }
