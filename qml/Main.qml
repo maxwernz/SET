@@ -1,5 +1,6 @@
 import QtQuick
 import QtQuick.Controls
+import QtQuick.Layouts
 
 ApplicationWindow {
     id: mainWindow
@@ -7,21 +8,19 @@ ApplicationWindow {
     height: 300
     visible: true
 
-    Column {
-
+    ColumnLayout {
+        anchors.fill: parent
         Image {
-            id: img1
-            fillMode: Image.Stretch
+            id: img
             source: "hs-mannheim.jpg"
-            anchors.left: mainWindow.left
-            anchors.top: mainWindow.top
-            anchors.right: mainWindow.right
-            anchors.margins: 10
+            Layout.fillWidth: true
+            Layout.alignment: Qt.AlignTop
         }
 
         Row {
-            padding: mainWindow.width / 10
-            spacing: 10
+            Layout.alignment: Qt.AlignHCenter
+            Layout.bottomMargin: mainWindow.height / 4
+            spacing: 5
             MyButton {
                 id: button1
                 name: "Button 1"

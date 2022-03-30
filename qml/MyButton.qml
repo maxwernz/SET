@@ -23,15 +23,15 @@ Rectangle{
     states: [
         State {
             name: "on"
-            PropertyChanges { target: button; color: "red"; scale: 0.9}
+            PropertyChanges { target: button; color: "red";}
         },
         State {
             name: "off"
-            PropertyChanges { target: button; color: "blue"; scale: 0.8}
+            PropertyChanges { target: button; color: "blue"; scale: 0.9}
         },
         State {
             name: "disabled"
-            PropertyChanges {target: button; color: "grey" }
+            PropertyChanges {target: button; color: "grey"; scale: 0.9}
         }
     ]
 
