@@ -31,7 +31,7 @@ Rectangle{
         },
         State {
             name: "disabled"
-            PropertyChanges {target: button; color: "grey"}
+            PropertyChanges {target: button; color: "grey"  }
         }
     ]
 
