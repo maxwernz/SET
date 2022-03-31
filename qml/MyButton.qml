@@ -7,8 +7,8 @@ Rectangle{
     radius: 25
     state: "disabled"
     property string name: "Button"
-    signal clicked(string newState)
-    onClicked: button.state = newState
+    signal clicked()
+    onClicked: (state === "on") ? state = "off" : state = "on";
 
     Behavior on scale {
         NumberAnimation { duration: 200 }
@@ -17,7 +17,7 @@ Rectangle{
 
     MouseArea {
         anchors.fill: parent
-        onClicked: (button.state === "on") ? button.clicked("off") : button.clicked("on");
+        onClicked: button.clicked()
     }
 
     states: [
